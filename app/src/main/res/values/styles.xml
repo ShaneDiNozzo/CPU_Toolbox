@@ -1,0 +1,12 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat">
+        <item name="android:textViewStyle">@style/MyTextView</item>
+    </style>
+
+    <style name="MyTextView" parent="android:Widget.TextView">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+</resources>

@@ -1,0 +1,190 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/firstRelativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/currentCPUFrequencyInRealTimeLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="CPU frequency in real-time:" />
+
+        <TextView
+            android:id="@+id/currentCPUFreq"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/currentCPUFrequencyInRealTimeLabel"
+            android:gravity="center"
+            android:text="Please wait..."
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/currentMaxCPUFrequencyLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="0dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="75dp"
+            android:text="Current maximum frequency:" />
+
+        <TextView
+            android:id="@+id/currentMaxCPUFreq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/selectMaximumFrequencyButton"
+            android:layout_alignStart="@+id/selectMaximumFrequencyButton"
+            android:layout_alignTop="@+id/currentMaxCPUFrequencyLabel"
+            android:gravity="center"
+            android:text="Please wait..."
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/currentMinCPUFrequencyLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/currentMaxCPUFrequencyLabel"
+            android:layout_marginRight="10dp"
+            android:text="Current minimum frequency:" />
+
+        <TextView
+            android:id="@+id/currentMinCPUFreq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/currentMaxCPUFreq"
+            android:layout_alignStart="@+id/currentMaxCPUFreq"
+            android:layout_below="@+id/currentMaxCPUFreq"
+            android:gravity="center"
+            android:text="Please wait..."
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/selectMaximumFrequencyLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/currentMinCPUFrequencyLabel"
+            android:layout_marginTop="28dp"
+            android:text="Select maximum frequency:" />
+
+        <!--<Spinner
+            android:id="@+id/maxFreqSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/selectMaximumFrequencyLabel"
+            android:gravity="end" />-->
+
+        <Button
+            android:id="@+id/selectMaximumFrequencyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/selectMaximumFrequencyLabel"
+            android:onClick="_selectMaximumCPUFrequencyDialog"
+            android:text="Please select" />
+
+        <TextView
+            android:id="@+id/selectMinimumFrequencyLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/selectMaximumFrequencyButton"
+            android:layout_marginTop="10dp"
+            android:text="Select minimum frequency:" />
+
+        <!--<Spinner
+            android:id="@+id/minFreqSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/selectMinimumFrequencyLabel"
+            android:layout_marginBottom="20dp"
+            android:gravity="end" />-->
+
+        <Button
+            android:id="@+id/selectMinimumFrequencyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/selectMinimumFrequencyLabel"
+            android:onClick="_selectMinimumCPUFrequencyDialog"
+            android:text="Please select" />
+
+        <Button
+            android:id="@+id/applySelectedCPUFrequenciesButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/selectMinimumFrequencyButton"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="29dp"
+            android:onClick="_applySelectedFrequencies"
+            android:text="Apply selected frequencies" />
+
+        <TextView
+            android:id="@+id/currentGovernorLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/applySelectedCPUFrequenciesButton"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="Current governor:" />
+
+        <TextView
+            android:id="@+id/currentGovernor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/governorSpinner"
+            android:layout_alignStart="@+id/governorSpinner"
+            android:layout_alignTop="@+id/currentGovernorLabel"
+            android:gravity="center"
+            android:text="Please wait..."
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/selectGovernorLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/currentGovernor"
+            android:text="Select governor:" />
+
+        <Spinner
+            android:id="@+id/governorSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/currentGovernor"
+            android:layout_marginLeft="38dp"
+            android:layout_marginStart="38dp"
+            android:layout_toEndOf="@+id/selectGovernorLabel"
+            android:layout_toRightOf="@+id/selectGovernorLabel"
+            android:gravity="center" />
+
+        <Button
+            android:id="@+id/applyGovernor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/governorSpinner"
+            android:layout_centerHorizontal="true"
+            android:onClick="_applySelectedGovernor"
+            android:text="Apply selected governor" />
+
+    </RelativeLayout>
+</ScrollView>
